@@ -1,4 +1,4 @@
-import gradio as gr
+﻿import gradio as gr
 from app.agent.graph import finance_graph
 from app.core.logger import agent_logger
 from dotenv import load_dotenv
@@ -31,13 +31,13 @@ def predict(message, history):
     except Exception as e:
         agent_logger.error(f"System Error: {str(e)}")
         if "rate_limit_exceeded" in str(e).lower():
-            return "⚠️ System is busy (Rate Limit). Please wait 10 seconds and try again."
-        return f"⚠️ An unexpected error occurred: {str(e)}"
+            return "âš ï¸ System is busy (Rate Limit). Please wait 10 seconds and try again."
+        return f"âš ï¸ An unexpected error occurred: {str(e)}"
 
 # Professional Chat Interface Setup
 demo = gr.ChatInterface(
     fn=predict,
-    title="🏦 AI Finance Advisor Pro",
+    title="ðŸ¦ AI Finance Advisor Pro",
     description="Advanced RAG Agent for Banking & Investment (Vietcombank Data Focus).",
     examples=[
         "What is the annual fee for Visa Signature?",
@@ -47,5 +47,5 @@ demo = gr.ChatInterface(
 )
 
 if __name__ == "__main__":
-    # app là giao diện Gradio của bạn
-    app.launch(server_name="0.0.0.0", server_port=7860)
+    # app lÃ  giao diá»‡n Gradio cá»§a báº¡n
+    demo.launch(server_name="0.0.0.0", server_port=7860)
