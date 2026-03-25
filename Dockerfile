@@ -11,7 +11,7 @@ WORKDIR /app
 COPY pyproject.toml ./
 
 # Cài đặt dependencies (không cài đặt project dưới dạng package)
-RUN uv sync --frozen --no-cache
+RUN uv sync --no-cache
 
 # Copy toàn bộ mã nguồn
 COPY . .
