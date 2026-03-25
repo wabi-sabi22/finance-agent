@@ -13,6 +13,9 @@ COPY pyproject.toml ./
 # Cài đặt dependencies (không cài đặt project dưới dạng package)
 RUN uv sync --no-cache
 
+# Copy toàn bộ thư mục database đã tạo sẵn vào container
+COPY ./chroma_db_local /app/chroma_db
+
 # Copy toàn bộ mã nguồn
 COPY . .
 
