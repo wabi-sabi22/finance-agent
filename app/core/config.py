@@ -6,7 +6,7 @@ load_dotenv()
 class Settings:
     PROJECT_NAME: str = "Finance Agentic RAG"
     
-    # API Keys extracted from environment variables
+    # API Keys 
     GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY")
     TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY")
     

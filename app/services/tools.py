@@ -23,7 +23,7 @@ class WebSearchService:
 
         results: List[dict] = []
         for item in resp.get("results", []):
-            # We capture both the text and the link now
+            
             results.append({
                 "content": item.get("content", ""),
                 "url": item.get("url", "No link available")

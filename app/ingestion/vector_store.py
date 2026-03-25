@@ -4,8 +4,8 @@ import os
 
 class VectorService:
     def __init__(self):
-        # Sử dụng Inference API để không phải tải model về máy chủ Space
-        # Điều này giúp khởi động nhanh và tiết kiệm RAM
+        
+        
         self.hf_token = os.getenv("HF_TOKEN")
         
         if not self.hf_token:

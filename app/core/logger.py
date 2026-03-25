@@ -1,9 +1,9 @@
 import logging
 import sys
-import os # Thêm thư viện os
+import os 
 
 def setup_logger():
-    # Tự động tạo thư mục logs nếu chưa có
+    
     log_dir = "logs"
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)

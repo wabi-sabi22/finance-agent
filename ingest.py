@@ -21,12 +21,12 @@ def run_ingestion():
     agent_logger.info(f"Successfully loaded {len(documents)} document pages.")
 
     # 2. Split: Breakdown long text into manageable chunks
-    # You can easily swap splitting strategies here (e.g., semantic splitting)
+    
     chunks = split_documents(documents, chunk_size=1000, chunk_overlap=200)
     agent_logger.info(f"Text split into {len(chunks)} chunks for better retrieval.")
 
     # 3. Store: Initialize embeddings and save to ChromaDB
-    # We use the same VectorService used during inference for consistency
+    
     vector_svc = VectorService()
     create_vector_store(
         chunks=chunks, 

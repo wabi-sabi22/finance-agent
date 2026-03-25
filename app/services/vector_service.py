@@ -4,7 +4,7 @@ import os
 
 class VectorService:
     def __init__(self):
-        # Lấy token từ Secrets của Space
+        # Lấy token 
         self.hf_token = os.getenv("HF_TOKEN")
         self.embeddings = HuggingFaceInferenceAPIEmbeddings(
             api_key=self.hf_token,

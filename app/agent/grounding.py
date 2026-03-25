@@ -28,7 +28,7 @@ def heuristic_need_web(question: str, internal_context_text: str) -> bool:
     q = normalize_text(question)
     ctx = internal_context_text.strip()
     
-    # 1. TRƯỜNG HỢP BẮT BUỘC: Dữ liệu nội bộ quá ít hoặc trống rỗng
+    
     # Nếu PDF trả về dưới 500 ký tự, mặc định là không đủ thông tin.
     if len(ctx) < 500:
         return True

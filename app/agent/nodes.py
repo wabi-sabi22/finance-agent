@@ -7,7 +7,7 @@ from app.services.tools import web_search_service
 from app.agent.state import AgentState
 from app.core.logger import agent_logger
 
-# Import các hàm helper từ grounding.py mà bạn vừa cập nhật
+# Import các hàm helper từ grounding.py 
 from app.agent.grounding import (
     MAX_PDF_CHARS,
     MAX_WEB_CHARS,
@@ -28,14 +28,14 @@ def smart_rag_node(state: AgentState):
     detected_mode = detect_mode(user_input)
 
     # 2. Truy xuất dữ liệu nội bộ (PDF)
-    # k=4 để lấy đủ lượng thông tin cần thiết
+
     docs = vector_svc.get_relevant_docs(user_input, k=4)
     internal_context_text = truncate(format_pdf_chunks(docs), MAX_PDF_CHARS)
 
     # 3. Quyết định Search Web dựa trên logic mới trong grounding.py
     web_results: List[Dict] = []
     
-    # Gọi hàm heuristic bạn vừa sửa ở file grounding.py
+    # Gọi hàm heuristic  
     if heuristic_need_web(user_input, internal_context_text):
         agent_logger.info(f"🌐 Kích hoạt Web Search cho câu hỏi: {user_input}")
         # Lấy kết quả từ Tavily (trả về list các dict có content và url)
@@ -47,7 +47,7 @@ def smart_rag_node(state: AgentState):
     # Hợp nhất toàn bộ ngữ cảnh
     all_context_text = "\n\n".join([t for t in [internal_context_text, web_context_text] if t])
 
-    # 5. Xây dựng Prompt để ép AI trích dẫn nguồn Web
+    # 5. Xây dựng Prompt trích dẫn nguồn Web
     business_role = business_role_text(detected_mode)
     summary_text = state.get("summary") or "Chưa có hội thoại trước đó."
 
@@ -82,5 +82,4 @@ Câu hỏi của khách hàng: {user_input}
     return {
         "messages": [response],
         "context": [all_context_text],
-        # Bạn có thể thêm hàm xử lý summary ở đây nếu muốn
     }
