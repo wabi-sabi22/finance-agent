@@ -1,13 +1,17 @@
 ﻿---
 title: Finance Agent
 emoji: 💰
+
 colorFrom: blue
+
 colorTo: green
+
 sdk: docker
+
 pinned: false
 ---
 
-💰 Finance Intelligence Hybrid-RAG Agent
+---💰 Finance Intelligence Hybrid-RAG Agent---
 A high-performance Financial AI Agent powered by Llama-3.3-70b, utilizing LangGraph for advanced reasoning and Hybrid RAG for combining internal knowledge with real-time web search.
 <img width="1468" height="802" alt="image" src="https://github.com/user-attachments/assets/57b760dc-94ed-452b-9c47-3b09829fdc87" />
 <img width="1493" height="791" alt="image" src="https://github.com/user-attachments/assets/3f47b6f7-799c-4f58-bf42-73c1b9c99340" />
