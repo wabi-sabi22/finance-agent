@@ -34,8 +34,43 @@ Infrastructure: Docker & Docker Compose.
 ✨ Key Features
 Hybrid RAG Architecture: Seamlessly switches between internal document retrieval and external web searching via Tavily.
 
+
+## 🐳 Running with Docker (Recommended)
+
+The fastest way to get the Finance Agent up and running is using Docker. This ensures all dependencies (including `uv` and `Llama-3.3` configurations) work out of the box.
+
+### Prerequisites
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+* Your API Keys (`HF_TOKEN`, `TAVILY_API_KEY`).
+
+### Step-by-Step Guide
+
+1. **Prepare your environment:**
+   Create a `.env` file in the root directory and add your keys:
+   ```env
+   HF_TOKEN=your_huggingface_token
+   TAVILY_API_KEY=your_tavily_key
+
 Agentic Thinking: Uses LangGraph to implement a "Think-Act-Observe" loop, ensuring the agent verifies its answers before responding.
 
 Financial Specialized: Optimized for analyzing market trends, financial reports, and real-time news.
 
 Performance First: Built with uv for lightning-fast environment setup and Llama-3.3 for near-GPT-4o intelligence at lower latency.
+
+
+## 📂 Project Structure
+
+```text
+FINANCE-AGENT/
+├── app/
+│   ├── core/           # Configuration and Loggers
+│   ├── ingestion/      # Data loading and Vector store logic
+│   └── services/       # LLM services (Llama-3.3) and Tools (Tavily)
+├── chroma_db_local/    # Local Vector Database
+├── main.py             # Entry point (FastAPI/Gradio)
+├── Dockerfile          # Docker configuration
+└── pyproject.toml      # Dependency management (uv)
+
+
+
+
