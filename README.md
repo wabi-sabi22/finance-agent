@@ -16,8 +16,11 @@ A high-performance Financial AI Agent powered by Llama-3.3-70b, utilizing LangGr
 <img width="1468" height="802" alt="image" src="https://github.com/user-attachments/assets/57b760dc-94ed-452b-9c47-3b09829fdc87" />
 <img width="1493" height="791" alt="image" src="https://github.com/user-attachments/assets/3f47b6f7-799c-4f58-bf42-73c1b9c99340" />
 
-📽️ Demo
+📽️ Watch Demo:
 [▶️ Watch Project Demo on Google Drive](https://drive.google.com/file/d/1f6cDOKJekP_kz3fGdzQ36ND4khtmEVW-/view?usp=drive_link)
+
+Product Demo:
+[🚀 Try Live Demo](https://huggingface.co/spaces/nhu445/finance-agent)
 
 🚀 Tech Stack :
 LLM Inference: Llama-3.3-70b - High-performance inference for complex financial reasoning.
