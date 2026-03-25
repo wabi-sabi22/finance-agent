@@ -1,6 +1,5 @@
 ﻿---
 title: Finance Agent
-emoji: 💰
 
 colorFrom: blue
 
