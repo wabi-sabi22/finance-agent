@@ -37,7 +37,7 @@ def predict(message, history):
 # Professional Chat Interface Setup
 demo = gr.ChatInterface(
     fn=predict,
-    title="ðŸ¦ AI Finance Advisor Pro",
+    title=" AI Finance Advisor ",
     description="Advanced RAG Agent for Banking & Investment (Vietcombank Data Focus).",
     examples=[
         "What is the annual fee for Visa Signature?",
