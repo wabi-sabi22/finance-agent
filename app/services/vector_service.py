@@ -1,20 +1,21 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
 from langchain_chroma import Chroma
 import os
 
 class VectorService:
     def __init__(self):
-      # This model runs directly on the CPU
-        self.embeddings = HuggingFaceEmbeddings(
+        # Lấy token từ Secrets của Space
+        self.hf_token = os.getenv("HF_TOKEN")
+        self.embeddings = HuggingFaceInferenceAPIEmbeddings(
+            api_key=self.hf_token,
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
         self.persist_directory = "chroma_db"
 
     def get_relevant_docs(self, query: str, k: int = 2):
         if not os.path.exists(self.persist_directory):
-            print(f"⚠️ Thư mục {self.persist_directory} không tồn tại!")
+            print("⚠️ Chưa có dữ liệu chroma_db!")
             return []
-        
         vector_db = Chroma(
             persist_directory=self.persist_directory,
             embedding_function=self.embeddings
