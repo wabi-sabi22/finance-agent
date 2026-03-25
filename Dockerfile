@@ -8,7 +8,7 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 
 # Copy file cấu hình dự án
-COPY pyproject.toml uv.lock ./
+COPY pyproject.toml ./
 
 # Cài đặt dependencies (không cài đặt project dưới dạng package)
 RUN uv sync --frozen --no-cache
